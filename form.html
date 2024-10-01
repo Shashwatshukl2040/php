@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <form action="submit_form.php" class="form" method="post" id="form">
+      <h1 class="text-center">Registration Form</h1>
+
+      <!-- First Section -->
+      <div class="form-section" id="section1">
+        <div class="input-group">
+          <label for="teamname">Team Name(IF team ) :</label>
+          <input type="text" name="teamname" id="teamname" >
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone Number :</label>
+          <input type="tel" name="phone" id="phone" required>
+        </div>
+
+        <div class="input-group">
+          <label for="college">College:</label>
+          <input type="text" name="college" id="college" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email ID :</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+        <button type="button" class="btn btn-next" onclick="verifyEmail()">Next</button>
+      </div>
+
+
+
+<div class="form-section" id="section2" style="display: none;">
+    <!-- Second section -->
+    <div class="input-group">
+        <label>select your team</label><br>
+        <input type="radio" name="team" id="singleRadio" onclick="showMember()">single
+        <input type="radio" name="team" id="teamRadio" onclick="showMember()">team <br><br>
+    
+        <div id="singleFields" style="display:none;">
+            Team Member: <input type="text" id="member" name="member"><br>
+        </div><br>
+    
+        <div id="teamFields" style="display:none;">
+            Team Member 1: <input type="text" id="member1" name="member1"><br>
+            Team Member 2: <input type="text" id="member2" name="member2"><br>
+            Team Member 3: <input type="text" id="member3" name="member3"><br>
+            Team Member 4: <input type="text" id="member4" name="member4"><br>
+            Team Member 5: <input type="text" id="member5" name="member5"><br>
+        </div><br>
+        <button type="button" class="btn btn-prev" onclick="showPrevSection()">Previous</button>
+        <button type="button" class="btn btn-next" onclick="showNext()">Next</button>
+    </div>
+</div>
+
+
+
+
+
+
+      <!-- Third Section -->
+      <div class="form-section" id="section3" style="display: none;">
+        <div class="input-group">
+          <div id="qr" style="display: none;">
+            <div id="teampay">
+              <center><img src="qr.jpg" width="50%" height="50%" alt="Payment Screenshot"></center>
+            </div>
+            <div id="singlepay">
+              <center><img src="qrsingle.jpg" width="50%" height="50%" alt="Payment Screenshot"></center>
+            </div>
+
+          </div>
+
+          <div class="input-group">
+            <label for="upi_id">UPI ID:</label>
+            <input type="text" name="upi_id" id="upi_id" required>
+          </div>
+
+          <div class="input-group">
+            <label for="transaction">Transaction ID:</label>
+            <input type="text" name="transaction" id="transaction" required>
+          </div>
+
+          <div class="input-group">
+              <label for="screenshot">Screenshot of Payment:</label>
+              <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+              <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+              <h3 id="status"></h3>
+          </div>
+
+
+          <div class="input-group">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the <a href="termsAndCondition.html">Terms and Conditions</a></label>
+          </div>
+
+          <button type="button" class="btn btn-prev" onclick="showPrevSection3()">Previous</button>
+          <button type="submit" class="btn btn-submit">Submit</button>
+        </div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
